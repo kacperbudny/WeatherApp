@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4bcc385cef.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>WeatherApp</title>
+  </head>
+  <body>
+    <header>
+      <h1>WeatherApp</h1>
+      <form id="search-form">
+        <input
+          type="text"
+          placeholder="Search for a city..."
+          name="search-input"
+          id="search-input"
+          autocomplete="off"
+        /><button type="submit" id="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <button class="favourites" id="open-favourites-button">
+        <i class="far fa-heart"></i> <span>Favourites</span>
+      </button>
+    </header>
+    <main>
+      <div class="current-weather">
+        <object type="image/svg+xml" id="current-icon"></object>
+        <div class="city-info">
+          <h2 id="city-name">-</h2>
+          <p class="temperature">
+            <span id="current-temperature">-</span> &deg;C
+          </p>
+          <p id="current-description">-</p>
+        </div>
+        <button class="favourites-icon" id="heart-button">
+          <i class="far fa-heart visible"></i
+          ><i class="fas fa-heart full-heart hidden"></i>
+        </button>
+      </div>
+
+      <div class="details">
+        <button id="details-header">
+          <div class="flex-container">
+            <h3>Details</h3>
+            <span>▼</span>
+          </div>
+        </button>
+        <div id="details-content" class="active">
+          <hr />
+          <ul class="details-flex-container">
+            <li class="details-item">
+              <h5>Sensed temperature</h5>
+              <span><span id="sensed-temperature">-</span> &deg;C</span>
+            </li>
+            <li class="details-item">
+              <h5>Humidity</h5>
+              <span><span id="humidity">-</span>%</span>
+            </li>
+            <li class="details-item">
+              <h5>Wind</h5>
+              <span><span id="wind">-</span> km/h</span>
+            </li>
+            <li class="details-item">
+              <h5>UV</h5>
+              <span id="uv">-</span>
+            </li>
+            <li class="details-item">
+              <h5>Pressure</h5>
+              <span><span id="pressure">-</span> hPa</span>
+            </li>
+          </ul>
+
+          <h4>Next 24 hours</h4>
+          <div class="graph-container">
+            <canvas id="hourly-graph" width="400" height="400"></canvas>
+          </div>
+
+          <div class="next-week">
+            <h4>Next week</h4>
+            <ul class="next-week-list">
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+              <li>
+                <span class="day"></span>
+                <span class="icon-cell">
+                  <object type="image/svg+xml" class="weather-icon"></object>
+                </span>
+                <span class="weather-description">-</span>
+                <span class="max-temp"
+                  ><span class="max-temp-data">-</span> &deg;C</span
+                >
+                <span class="min-temp"
+                  ><span class="min-temp-data">-</span> &deg;C</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>&copy; 2021 Kacper Budny</footer>
+    <div id="dark-overlay" hidden></div>
+    <div id="favourites-container" hidden>
+      <div class="favourites-header">
+        <h3>Favourite cities</h3>
+        <button id="close-favourites"><i class="fas fa-times"></i></button>
+      </div>
+
+      <ul id="favourites-list"></ul>
+    </div>
+
+    <div id="loading-overlay">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <template id="favourite-item-template">
+      <li class="favourite-item" data-key>
+        <div class="flex-group-left">
+          <object type="image/svg+xml" class="icon"></object>
+          <div class="city-info">
+            <h4></h4>
+            <p><span class="temperature"></span> &deg;C</p>
+            <p class="description"></p>
+          </div>
+        </div>
+        <button class="remove-button">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </li>
+    </template>
+  </body>
+</html>

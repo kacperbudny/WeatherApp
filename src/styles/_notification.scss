@@ -1,0 +1,31 @@
+.notification {
+  position: fixed;
+  right: 0;
+  bottom: -100px;
+  margin: 8px;
+  background-color: $notification-warning;
+  padding: 20px;
+  min-width: 10%;
+  cursor: pointer;
+  box-shadow: $box-shadow;
+  transition: bottom 0.5s, background-color 0.5s, box-shadow 0.5s;
+  font-size: 1rem;
+  z-index: 20;
+
+  h6 {
+    font-size: 1.2rem;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.1rem;
+    margin: 8px;
+  }
+}
+
+.notification:hover {
+  box-shadow: $box-shadow-focus;
+  background-color: $notification-warning-focus;
+}

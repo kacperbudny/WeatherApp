@@ -1,0 +1,65 @@
+.current-weather {
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  text-shadow: $font-shadow;
+  margin-top: 20vh;
+  position: relative;
+
+  #current-icon {
+    margin-right: 8px;
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow($font-shadow);
+
+    @include lg-screen {
+      width: 130px;
+      height: 130px;
+      margin-right: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+
+    @include lg-screen {
+      font-size: 2.1rem;
+    }
+  }
+
+  .temperature {
+    font-size: 2rem;
+
+    @include lg-screen {
+      font-size: 3.1rem;
+    }
+  }
+
+  #current-description {
+    font-weight: lighter;
+    font-size: 1.2rem;
+
+    @include lg-screen {
+      font-size: 1.6rem;
+    }
+  }
+
+  .favourites-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(150%);
+    font-size: 1.3rem;
+    text-shadow: $font-shadow;
+
+    @include lg-screen {
+      font-size: 1.5rem;
+    }
+
+    .full-heart {
+      color: $heart-red;
+    }
+  }
+}
